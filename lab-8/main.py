@@ -30,3 +30,26 @@ group = {
         },
     ]
 }
+
+
+
+# ----Виконано студентом групи КН-35 Воронко І. І.----
+
+# функція для обчислення середнього балу студента
+def get_average_mark(student):
+    return sum(student["marks"].values()) / len(student["marks"].values())
+
+# функція для пошуку студента з найбільшим середнім балом
+def get_student_with_max_average_mark(group):
+
+    student_with_max_average_mark = group["students"][0]
+
+    for student in group["students"]:
+        if get_average_mark(student) > get_average_mark(student_with_max_average_mark):
+            student_with_max_average_mark = student
+
+    return student_with_max_average_mark
+
+
+student = get_student_with_max_average_mark(group)
+print("Студент з найбільшим середнім балом: ", student["fullName"])
