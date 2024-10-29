@@ -29,3 +29,4 @@ if csv_file != None:
     csv_writer.writerow({CSV_FILE_FIELDNAMES[0]: "Петренко", CSV_FILE_FIELDNAMES[1]: "Іван", CSV_FILE_FIELDNAMES[2]: 72,})
     csv_writer.writerow({CSV_FILE_FIELDNAMES[0]: "Іванов", CSV_FILE_FIELDNAMES[1]: "Сергій", CSV_FILE_FIELDNAMES[2]: 80,})
     csv_writer.writerow({CSV_FILE_FIELDNAMES[0]: "Охрипенко", CSV_FILE_FIELDNAMES[1]: "Марія", CSV_FILE_FIELDNAMES[2]: 95,})
+    csv_file.close()
