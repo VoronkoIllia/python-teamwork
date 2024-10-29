@@ -49,7 +49,7 @@ if csv_file != None and json_file != None:
     items = [row for row in csv_reader]
 
     # записуємо отриманий список у файл data.json
-    json.dump(items, json_file, ensure_ascii=False)
+    json.dump(items, json_file, ensure_ascii=False, indent=4, separators=(',',':'))
 
     # закриваємо обидва файла
     csv_file.close()
