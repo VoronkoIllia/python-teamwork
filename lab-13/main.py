@@ -31,3 +31,26 @@ if csv_file != None:
     csv_writer.writerow({CSV_FILE_FIELDNAMES[0]: "Іванов", CSV_FILE_FIELDNAMES[1]: "Сергій", CSV_FILE_FIELDNAMES[2]: 80,})
     csv_writer.writerow({CSV_FILE_FIELDNAMES[0]: "Охрипенко", CSV_FILE_FIELDNAMES[1]: "Марія", CSV_FILE_FIELDNAMES[2]: 95,})
     csv_file.close()
+
+
+#--- Воронко Ілля КН-35 ---
+
+# відкриваємо файл data.csv на читання
+csv_file = Open("data.csv", "r")
+
+# відкриваємо файл data.json на запис
+json_file = Open("data.json", "w")
+
+if csv_file != None and json_file != None:
+    
+    csv_reader = csv.DictReader(csv_file, delimiter=";",)
+
+    # формуємо список, кожен елемент якого є рядком файла data.csv, записаним у форматі словника
+    items = [row for row in csv_reader]
+
+    # записуємо отриманий список у файл data.json
+    json.dump(items, json_file, ensure_ascii=False)
+
+    # закриваємо обидва файла
+    csv_file.close()
+    json_file.close()
