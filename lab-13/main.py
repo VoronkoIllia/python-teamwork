@@ -23,6 +23,7 @@ CSV_FILE_FIELDNAMES = ["Прізвище", "Ім'я", "Середній бал"]
 
 # Початкове заповнення файлу data.csv
 csv_file = Open("data.csv", "w")
+
 if csv_file != None:
     csv_writer = csv.DictWriter(csv_file, delimiter=";", fieldnames=CSV_FILE_FIELDNAMES, lineterminator="\n")
     csv_writer.writeheader()
